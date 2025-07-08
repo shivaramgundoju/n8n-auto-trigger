@@ -1,0 +1,15 @@
+name: Daily Trigger for n8n
+
+on:
+  schedule:
+    - cron: '30 2 * * *'  # 2:30 AM UTC = 8:00 AM IST
+  workflow_dispatch:      # Optional: allows manual trigger from GitHub UI
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger n8n Webhook
+        run: |
+          curl -X POST http://localhost:5678/webhook-test/Trigger Daily
