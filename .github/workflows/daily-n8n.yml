@@ -12,4 +12,5 @@ jobs:
     steps:
       - name: Trigger n8n Webhook
         run: |
-          curl -X POST http://localhost:5678/webhook-test/Trigger Daily
+          curl -X POST curl -X POST https://n8n-production-ddd3.up.railway.app/webhook/trigger-daily
+
